@@ -1,0 +1,75 @@
+<button class='btn btn-primary' id='preview_certificate_btn' style="display:none">Preview</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.min.js"></script>
+<script>
+var recipient;
+var nominator;
+var reason;
+var department;
+if(typeof(decrypted_data) !== "undefined"){
+  recipient = decrypted_data.responses[2].survey_recep_name;
+  nominator    = decrypted_data.responses[2].survey_sender_name;
+  reason       = decrypted_data.responses[2].survey_why;
+  department   = decrypted_data.responses[2].survey_department;
+  certificate_name = "certificate.pdf";
+  generate_certificate();
+}
+$("#preview_certificate_btn").show();
+$("input[name=survey_recep_name]").on("change",function(){
+  Trial.set(
+    "recipient",
+    $("input[name=survey_recep_name]").val());
+  });
+  $("input[name=survey_sender_name]").on("change",function(){
+    Trial.set(
+      "nominator",
+      $("input[name=survey_sender_name]").val()
+    );
+  });
+  $("textarea[name=survey_why]").on("change",function(){
+    Trial.set(
+      "reason",
+      $("textarea[name=survey_why]").val()
+    );
+  });
+  $("select[name=survey_department]").on("change",function(){
+    Trial.set(
+      "department",
+      $("select[name=survey_department]").val()
+    );
+  /*
+    var departments = survey_obj.data.filter(function(row){\r\n    return row.item_name == "department";\r\n  })[0];\r\n  \r\n  var department_index = departments.answers.split("|").indexOf($("select[name=survey_department]").val());\r\n  var department_email = departments.values.split("|")[department_index];\r\n  \r\n  Trial.set("department_email",department_email);\r\n  */
+    
+  });
+  
+  $("#preview_certificate_btn").on("click",function(){
+    if($("input[name=survey_recep_name]").val() !== undefined){
+      recipient  = $("input[name=survey_recep_name]").val();
+      nominator  = $("input[name=survey_sender_name]").val();
+      reason     = $("textarea[name=survey_why]").val();
+      department = $("select[name=survey_department]").val();
+      if(department == null){
+        bootbox.alert("This won't work until you select a department");
+      }
+    } else {
+      recipient  = "Example Recipient";
+      nominator  = "Example Nominator";
+      reason     = "Example Reason";
+      department = "Example Department";
+    }
+    certificate_name = "Preview_Only_Not_Sent_Yet.pdf";
+    generate_certificate();
+  });
+  function generate_certificate(){
+    var uor_logo_url = "../User/logos/UoR_logo.jpg";
+    var A_A_logo_url = "../User/logos/Above_and_Beyond.png";
+    var lfe_logo_url = "../User/logos/LFE.png";
+    var sticker_url  = "../User/logos/Sticker.jpg";
+    var stars_url    = "../User/logos/SingleStar.jpg";
+    var uor_logo = new Image();
+    var a_a_logo = new Image();
+    var lfe_logo = new Image();
+    var sticker  = new Image();
+    var stars    = new Image();
+        uor_logo.src = uor_logo_url;
+        a_a_logo.src = A_A_logo_url;\r\n\tlfe_logo.src = lfe_logo_url;\r\n\tsticker.src  = sticker_url;\r\n\tstars.src    = stars_url;\r\n\t\r\n\timages \t\t\t = [uor_logo,a_a_logo,lfe_logo,sticker,stars];\t\t\t\r\n\timages_loaded = 0;\r\n\timages.forEach(function(image){\r\n\t\timage.onload = function () {\r\n\t\t\timages_loaded ++;\r\n\t\t\tif(images_loaded == 5){\r\n\t\t\t\twrite_doc();\r\n\t\t\t}\r\n\t\t}\r\n\t});\r\n\t\r\n\t\r\n\t\r\n\tfunction write_doc(){\t\r\n\t\tvar options = {orientation: 'p', unit: 'mm'}; //format: custom\r\n\t\tvar doc = new jsPDF(options);\r\n\t\t\r\n\t\tdoc.setLineWidth(20);\r\n\t\tdoc.setDrawColor(0, 153, 255);\r\n\t\t\r\n\t\tdoc.rect(1,1, 208, 295); //, style\r\n\t\t\r\n    doc.addImage(uor_logo, 'PNG', 18, 18, 40, 13);\r\n\t\tdoc.addImage(a_a_logo, 'PNG', 165, 15, 30, 30);\r\n\t\t\r\n    \r\n\t\tdoc.addImage(stars, 'PNG', 95, 40,  10, 10);\r\n\t\tdoc.addImage(stars, 'PNG', 95, 65,  10, 10);\r\n    \r\n    doc.addImage(stars, 'PNG', 95, 205, 10, 10);\r\n\t\tdoc.addImage(stars, 'PNG', 95, 250, 10, 10);\r\n\t\t\r\n\t\t//doc.addImage(sticker, 'JPG', 0, 0, 25, 25);\r\n\t\t\r\n\t\t\r\n\t\t\r\n\t\tdoc.setFont("Helvetica");\r\n    doc.setFontStyle("bold");\r\n\t\tdoc.setFontSize(20);\r\n\t\tdoc.text(department, 103, 60, 'center'); // 'School of Psychology & Clinical Language Sciences'\r\n    doc.setFontStyle("");\r\n\t\tdoc.text('Congratulations & thank you:', 100, 90, 'center');\r\n\t\tdoc.setTextColor(0, 0, 255);\r\n\t\tdoc.text(recipient, 100, 105, 'center');\r\n\t\tdoc.setTextColor(0, 0, 0);\r\n\t\tvar nomination_text = doc.splitTextToSize("You have been nominated for 'Above and Beyond' by " + nominator + " for the following reason:", 160);\r\n\t\tdoc.text(nomination_text, 100, 120,"center");\r\n\t\tdoc.setTextColor(0, 0, 255);\r\n    doc.setFontSize(15);\r\n\t\tvar reason_text = doc.splitTextToSize(reason, 160);\r\n\t\tdoc.text(reason_text, 100, 150, 'center');\r\n\t\tdoc.setTextColor(0, 0, 0);\r\n\t\tdoc.setFontSize(12);\r\n\t\t\r\n\t\tvar near_bottom_text = doc.splitTextToSize("'Above and Beyond' is a way of showing appreciation of your colleagues. This platform has been adopted from the 'Learning from Excellence' programme used in the NHS. If you would also like to nominate a colleague for going that extra mile, or just to say thank you, please go to:", 150);\r\n\t\tdoc.text(100, 225, near_bottom_text,"center");\r\n\t\tdoc.setTextColor(0, 0, 255);\r\n\t\tdoc.text("https://tinyurl.com/y8bdscor", 100, 247, 'center');\r\n\t\t\r\n\t\tdoc.addImage(lfe_logo, 'PNG', 70, 265, 60, 20);\r\n\t\t\r\n\t\tdoc.setTextColor(0, 0, 153);\r\n\t\tdoc.setFontSize(10);\r\n\t\tdoc.text("www.learningfromexcellence.com", 100, 293, 'center');\r\n\t\t\r\n\t\tvar this_output = doc.output();\r\n\t\t\r\n\t\tdoc.save(certificate_name);\r\n\t\t\r\n\t\tif(certificate_name == "Preview_Only_Not_Sent_Yet.pdf"){\r\n\t\t  bootbox.alert("You now have downloaded a preview. If you're happy with the preview, please do <b>NOT</b> forget to submit the actual form by clicking <b>Proceed</b>!");\r\n\t\t} else {\r\n  \t\tbootbox.confirm("You can also download another certificate using the name of the nominator then recipient if they have no illegal characters in their names - do you want to try?",function(result){\r\n  \t\t\tif(result){\r\n  \t\t\t\tdoc.save(nominator+"_nominating_"+recipient+".pdf");\r\n  \t\t\t}\r\n  \t\t});  \r\n\t\t}\r\n\t}\r\n}\r\n</script>
