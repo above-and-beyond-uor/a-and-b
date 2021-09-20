@@ -28,6 +28,9 @@ switch (parent.parent.Project.get_vars.platform) {
       repo: org_repo[1],
     });
     break;
+  default:
+    home_dir = "..";
+    break;
 }
 
 /*
@@ -802,9 +805,6 @@ function process_returned_questionnaire(data, survey_outline) {
   function load_phasetypes(phasetypes){
     if(phasetypes.length > 0){
       var phasetype = phasetypes.pop().type;
-      console.log("phasetype");
-      console.log(JSON.stringify(phasetype));
-
 
       $.get(home_dir + "/User/PhaseTypes/" + phasetype + ".html", function(this_html){
 
