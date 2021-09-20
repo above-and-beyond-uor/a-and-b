@@ -1,6 +1,6 @@
 {
   "all_procs": {
-    "procedure_1.csv": "item,phasetype,max time,text,shuffle 1,survey,\r\n2,survey,user,This is the start of a new experiment.,off,danquestionnaire.csv,\r\n2,survey,user,This is the start of a new experiment.,off,autism_quotient.csv,"
+    "procedure_1.csv": "item,phasetype,max time,text,shuffle 1,survey,\r\n2,survey,user,This is the start of a new experiment.,off,danquestionnaire.csv,\r\n0,submit_certificate,user,,off,,"
   },
   "conditions": "name,notes,stimuli,procedure,fullscreen,welcome,participant_id,end_message,start_message,buffer,scripts,skip_quality,\r\ncondition_1,You can put more detailed notes in this field,stimuli_1.csv,procedure_1.csv,off,,random,,,5,,yes,",
   "all_stims": {
@@ -158,24 +158,23 @@
       [
         "item_name",
         "text",
-        "type",
-        "answers",
-        "values",
-        "score:aq_test",
-        "score:social_skill",
-        "score:attention_switching",
-        "score:communication",
-        "score:imagination",
-        "score:attention_to_detail",
-        "optional",
+        "Type",
+        "Answers",
+        "Values",
+        "Score: AQ_Test",
+        "Score: Social_Skill",
+        "Score: Attention_switching",
+        "Score: Communication",
+        "Score: Imagination",
+        "Score: Attention_to_detail",
+        "Optional",
         "btn_width",
-        "reversed",
-        null
+        "reversed"
       ],
       [
         "Instructions1",
         "<span style='color:#006699'><span style='font-size:20px'>Choose one response that best describes how strongly each item applies to you:</span></span>",
-        "instruct",
+        "Instruct",
         "",
         "",
         "",
@@ -186,25 +185,23 @@
         "",
         "",
         "",
-        "",
-        null
+        ""
       ],
       [
         "AQ1",
         "I prefer to do things with others rather than on my own.",
         "likert",
         "Definitely agree|Slightly agree|Slightly disagree|Definitely disagree",
-        "0|0|1|1",
-        "1",
-        "1",
+        "1|1|0|0",
+        "r1",
+        "r1",
         "",
         "",
         "",
         "",
         "No",
         "100px",
-        "yes",
-        null
+        "yes"
       ],
       [
         "AQ2",
@@ -220,25 +217,23 @@
         "",
         "No",
         "100px",
-        "no",
-        null
+        "no"
       ],
       [
         "AQ3",
         "If I try to imagine something, I find it very easy to create a picture in my mind.",
         "likert",
         "Definitely agree|Slightly agree|Slightly disagree|Definitely disagree",
-        "0|0|1|1",
-        "1",
+        "1|1|0|0",
+        "r1",
         "",
         "",
         "",
-        "1",
+        "r1",
         "",
         "No",
         "100px",
-        "yes",
-        null
+        "yes"
       ],
       [
         "AQ4",
@@ -254,8 +249,7 @@
         "",
         "No",
         "100px",
-        "no",
-        null
+        "no"
       ],
       [
         "AQ5",
@@ -271,8 +265,7 @@
         "1",
         "No",
         "100px",
-        "no",
-        null
+        "no"
       ],
       [
         "AQ6",
@@ -288,8 +281,7 @@
         "1",
         "No",
         "100px",
-        "no",
-        null
+        "no"
       ],
       [
         "AQ7",
@@ -305,25 +297,23 @@
         "",
         "No",
         "100px",
-        "no",
-        null
+        "no"
       ],
       [
         "AQ8",
         "When I'm reading a story, I can easily imagine what the characters might look like.",
         "likert",
         "Definitely agree|Slightly agree|Slightly disagree|Definitely disagree",
-        "0|0|1|1",
-        "1",
+        "1|1|0|0",
+        "r1",
         "",
         "",
         "",
-        "1",
+        "r1",
         "",
         "No",
         "100px",
-        "yes",
-        null
+        "yes"
       ],
       [
         "AQ9",
@@ -339,42 +329,39 @@
         "1",
         "No",
         "100px",
-        "no",
-        null
+        "no"
       ],
       [
         "AQ10",
         "In a social group, I can easily keep track of several different people's conversations.",
         "likert",
         "Definitely agree|Slightly agree|Slightly disagree|Definitely disagree",
-        "0|0|1|1",
-        "1",
+        "1|1|0|0",
+        "r1",
         "",
-        "1",
+        "r1",
         "",
         "",
         "",
         "No",
         "100px",
-        "yes",
-        null
+        "yes"
       ],
       [
         "AQ11",
         "I find social situations easy.",
         "likert",
         "Definitely agree|Slightly agree|Slightly disagree|Definitely disagree",
-        "0|0|1|1",
-        "1",
-        "1",
+        "1|1|0|0",
+        "r1",
+        "r1",
         "",
         "",
         "",
         "",
         "No",
         "100px",
-        "yes",
-        null
+        "yes"
       ],
       [
         "AQ12",
@@ -390,8 +377,7 @@
         "1",
         "No",
         "100px",
-        "no",
-        null
+        "no"
       ],
       [
         "AQ13",
@@ -407,42 +393,39 @@
         "",
         "No",
         "100px",
-        "no",
-        null
+        "no"
       ],
       [
         "AQ14",
         "I find making up stories easy.",
         "likert",
         "Definitely agree|Slightly agree|Slightly disagree|Definitely disagree",
-        "0|0|1|1",
-        "1",
+        "1|1|0|0",
+        "r1",
         "",
         "",
         "",
-        "1",
+        "r1",
         "",
         "No",
         "100px",
-        "yes",
-        null
+        "yes"
       ],
       [
         "AQ15",
         "I find myself drawn more strongly to people than to things.",
         "likert",
         "Definitely agree|Slightly agree|Slightly disagree|Definitely disagree",
-        "0|0|1|1",
-        "1",
-        "1",
+        "1|1|0|0",
+        "r1",
+        "r1",
         "",
         "",
         "",
         "",
         "No",
         "100px",
-        "yes",
-        null
+        "yes"
       ],
       [
         "AQ16",
@@ -458,25 +441,23 @@
         "",
         "No",
         "100px",
-        "no",
-        null
+        "no"
       ],
       [
         "AQ17",
         "I enjoy social chit-chat.",
         "likert",
         "Definitely agree|Slightly agree|Slightly disagree|Definitely disagree",
-        "0|0|1|1",
-        "1",
+        "1|1|0|0",
+        "r1",
         "",
         "",
-        "1",
+        "r1",
         "",
         "",
         "No",
         "100px",
-        "yes",
-        null
+        "yes"
       ],
       [
         "AQ18",
@@ -492,8 +473,7 @@
         "",
         "No",
         "100px",
-        "no",
-        null
+        "no"
       ],
       [
         "AQ19",
@@ -509,8 +489,7 @@
         "1",
         "No",
         "100px",
-        "no",
-        null
+        "no"
       ],
       [
         "AQ20",
@@ -526,8 +505,7 @@
         "",
         "No",
         "100px",
-        "no",
-        null
+        "no"
       ],
       [
         "AQ21",
@@ -543,8 +521,7 @@
         "",
         "No",
         "100px",
-        "no",
-        null
+        "no"
       ],
       [
         "AQ22",
@@ -560,8 +537,7 @@
         "",
         "No",
         "100px",
-        "no",
-        null
+        "no"
       ],
       [
         "AQ23",
@@ -577,42 +553,39 @@
         "1",
         "No",
         "100px",
-        "no",
-        null
+        "no"
       ],
       [
         "AQ24",
         "I would rather go to the theatre than a museum.",
         "likert",
         "Definitely agree|Slightly agree|Slightly disagree|Definitely disagree",
-        "0|0|1|1",
-        "1",
+        "1|1|0|0",
+        "r1",
         "",
         "",
         "",
-        "1",
+        "r1",
         "",
         "No",
         "100px",
-        "yes",
-        null
+        "yes"
       ],
       [
         "AQ25",
         "It does not upset me if my daily routine is disturbed.",
         "likert",
         "Definitely agree|Slightly agree|Slightly disagree|Definitely disagree",
-        "0|0|1|1",
-        "1",
+        "1|1|0|0",
+        "r1",
         "",
-        "1",
+        "r1",
         "",
         "",
         "",
         "No",
         "100px",
-        "yes",
-        null
+        "yes"
       ],
       [
         "AQ26",
@@ -628,110 +601,103 @@
         "",
         "No",
         "100px",
-        "no",
-        null
+        "no"
       ],
       [
         "AQ27",
         "I find it easy to 'read between the lines' when someone is talking to me.",
         "likert",
         "Definitely agree|Slightly agree|Slightly disagree|Definitely disagree",
-        "0|0|1|1",
-        "1",
+        "1|1|0|0",
+        "r1",
         "",
         "",
-        "1",
+        "r1",
         "",
         "",
         "No",
         "100px",
-        "yes",
-        null
+        "yes"
       ],
       [
         "AQ28",
         "I usually concentrate more on the whole picture, rather than the small details.",
         "likert",
         "Definitely agree|Slightly agree|Slightly disagree|Definitely disagree",
-        "0|0|1|1",
-        "1",
+        "1|1|0|0",
+        "r1",
         "",
         "",
         "",
         "",
-        "1",
+        "r1",
         "No",
         "100px",
-        "yes",
-        null
+        "yes"
       ],
       [
         "AQ29",
         "I am not very good at remembering phone numbers.",
         "likert",
         "Definitely agree|Slightly agree|Slightly disagree|Definitely disagree",
-        "0|0|1|1",
-        "1",
+        "1|1|0|0",
+        "r1",
         "",
         "",
         "",
         "",
-        "1",
+        "r1",
         "No",
         "100px",
-        "yes",
-        null
+        "yes"
       ],
       [
         "AQ30",
         "I don't usually notice small changes in a situation, or a person's appearance.",
         "likert",
         "Definitely agree|Slightly agree|Slightly disagree|Definitely disagree",
-        "0|0|1|1",
-        "1",
+        "1|1|0|0",
+        "r1",
         "",
         "",
         "",
         "",
-        "1",
+        "r1",
         "No",
         "100px",
-        "yes",
-        null
+        "yes"
       ],
       [
         "AQ31",
         "I know how to tell if someone listening to me is getting bored.",
         "likert",
         "Definitely agree|Slightly agree|Slightly disagree|Definitely disagree",
-        "0|0|1|1",
-        "1",
+        "1|1|0|0",
+        "r1",
         "",
         "",
-        "1",
+        "r1",
         "",
         "",
         "No",
         "100px",
-        "yes",
-        null
+        "yes"
       ],
       [
         "AQ32",
         "I find it easy to do more than one thing at once.",
         "likert",
         "Definitely agree|Slightly agree|Slightly disagree|Definitely disagree",
-        "0|0|1|1",
-        "1",
+        "1|1|0|0",
+        "r1",
         "",
-        "1",
+        "r1",
         "",
         "",
         "",
         "No",
         "100px",
-        "yes",
-        null
+        "yes"
       ],
       [
         "AQ33",
@@ -747,25 +713,23 @@
         "",
         "No",
         "100px",
-        "no",
-        null
+        "no"
       ],
       [
         "AQ34",
         "I enjoy doing things spontaneously.",
         "likert",
         "Definitely agree|Slightly agree|Slightly disagree|Definitely disagree",
-        "0|0|1|1",
-        "1",
+        "1|1|0|0",
+        "r1",
         "",
-        "1",
+        "r1",
         "",
         "",
         "",
         "No",
         "100px",
-        "yes",
-        null
+        "yes"
       ],
       [
         "AQ35",
@@ -781,59 +745,55 @@
         "",
         "No",
         "100px",
-        "no",
-        null
+        "no"
       ],
       [
         "AQ36",
         "I find it easy to work out what someone is thinking or feeling just by looking at their face.",
         "likert",
         "Definitely agree|Slightly agree|Slightly disagree|Definitely disagree",
-        "0|0|1|1",
-        "1",
-        "1",
+        "1|1|0|0",
+        "r1",
+        "r1",
         "",
         "",
         "",
         "",
         "No",
         "100px",
-        "yes",
-        null
+        "yes"
       ],
       [
         "AQ37",
         "If there is an interruption, I can switch back to what I was doing very quickly.",
         "likert",
         "Definitely agree|Slightly agree|Slightly disagree|Definitely disagree",
-        "0|0|1|1",
-        "1",
+        "1|1|0|0",
+        "r1",
         "",
-        "1",
+        "r1",
         "",
         "",
         "",
         "No",
         "100px",
-        "yes",
-        null
+        "yes"
       ],
       [
         "AQ38",
         "I am good at social chit-chat.",
         "likert",
         "Definitely agree|Slightly agree|Slightly disagree|Definitely disagree",
-        "0|0|1|1",
-        "1",
+        "1|1|0|0",
+        "r1",
         "",
         "",
-        "1",
+        "r1",
         "",
         "",
         "No",
         "100px",
-        "yes",
-        null
+        "yes"
       ],
       [
         "AQ39",
@@ -849,25 +809,23 @@
         "",
         "No",
         "100px",
-        "no",
-        null
+        "no"
       ],
       [
         "AQ40",
         "When I was young, I used to enjoy playing games involving pretending with other children.",
         "likert",
         "Definitely agree|Slightly agree|Slightly disagree|Definitely disagree",
-        "0|0|1|1",
-        "1",
+        "1|1|0|0",
+        "r1",
         "",
         "",
         "",
-        "1",
+        "r1",
         "",
         "No",
         "100px",
-        "yes",
-        null
+        "yes"
       ],
       [
         "AQ41",
@@ -883,8 +841,7 @@
         "",
         "No",
         "100px",
-        "no",
-        null
+        "no"
       ],
       [
         "AQ42",
@@ -900,8 +857,7 @@
         "",
         "No",
         "100px",
-        "no",
-        null
+        "no"
       ],
       [
         "AQ43",
@@ -917,25 +873,23 @@
         "",
         "No",
         "100px",
-        "no",
-        null
+        "no"
       ],
       [
         "AQ44",
         "I enjoy social occasions.",
         "likert",
         "Definitely agree|Slightly agree|Slightly disagree|Definitely disagree",
-        "0|0|1|1",
-        "1",
-        "1",
+        "1|1|0|0",
+        "r1",
+        "r1",
         "",
         "",
         "",
         "",
         "No",
         "100px",
-        "yes",
-        null
+        "yes"
       ],
       [
         "AQ45",
@@ -951,8 +905,7 @@
         "",
         "No",
         "100px",
-        "no",
-        null
+        "no"
       ],
       [
         "AQ46",
@@ -968,80 +921,74 @@
         "",
         "No",
         "100px",
-        "no",
-        null
+        "no"
       ],
       [
         "AQ47",
         "I enjoy meeting new people.",
         "likert",
         "Definitely agree|Slightly agree|Slightly disagree|Definitely disagree",
-        "0|0|1|1",
-        "1",
-        "1",
+        "1|1|0|0",
+        "r1",
+        "r1",
         "",
         "",
         "",
         "",
         "No",
         "100px",
-        "yes",
-        null
+        "yes"
       ],
       [
         "AQ48",
         "I am a good diplomat.",
         "likert",
         "Definitely agree|Slightly agree|Slightly disagree|Definitely disagree",
-        "0|0|1|1",
-        "1",
-        "1",
+        "1|1|0|0",
+        "r1",
+        "r1",
         "",
         "",
         "",
         "",
         "No",
         "100px",
-        "yes",
-        null
+        "yes"
       ],
       [
         "AQ49",
         "I am not very good at remembering people's date of birth.",
         "likert",
         "Definitely agree|Slightly agree|Slightly disagree|Definitely disagree",
-        "0|0|1|1",
-        "1",
+        "1|1|0|0",
+        "r1",
         "",
         "",
         "",
         "",
-        "1",
+        "r1",
         "No",
         "100px",
-        "yes",
-        null
+        "yes"
       ],
       [
         "AQ50",
         "I find it very easy to play games with children that involve pretending.",
         "likert",
         "Definitely agree|Slightly agree|Slightly disagree|Definitely disagree",
-        "0|0|1|1",
-        "1",
+        "1|1|0|0",
+        "r1",
         "",
         "",
         "",
-        "1",
+        "r1",
         "",
         "No",
         "100px",
-        "yes",
-        null
+        "yes"
       ],
       [
-        "",
-        null
+        ""
       ]
     ]
   },
@@ -1050,7 +997,8 @@
     "instruct": "<!--\n/*  Collector (Garcia, Kornell, Kerr, Blake & Haffey)\n    A program for running experiments on the web\n    Copyright 2012-2016 Mikey Garcia & Nate Kornell\n\n\n    This program is free software: you can redistribute it and/or modify\n    it under the terms of the GNU General Public License version 3 as published by\n    the Free Software Foundation.\n\n    This program is distributed in the hope that it will be useful,\n    but WITHOUT ANY WARRANTY; without even the implied warranty of\n    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n    GNU General Public License for more details.\n\n    You should have received a copy of the GNU General Public License\n    along with this program.  If not, see <http://www.gnu.org/licenses/>\n \t\t\n\t\tKitten/Cat release (2019-2021) author: Dr. Anthony Haffey (team@someopen.solutions)\t\t\n*/\n-->\n<style>\n  #instruct_text {\n    margin: auto;\n    width: 500px;\n    padding: 50px;\n    max-height: 600px;\n    text-align: center;\n  }\n  #proceed_button {\n    position: absolute;\n    right: 20px;\n  }\n  #trial_contents {\n    position: absolute;\n    top: 0;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    margin: auto;\n    width: 600;\n    height: 600;\n  }\n</style>\n<div id=\"trial_contents\">\n  <div id=\"instruct_text\">{{text}}</div>\n  <div>\n    <button\n      class=\"btn btn-primary\"\n      id=\"proceed_button\"\n      onclick=\"Phase.submit()\"\n    >\n      Proceed\n    </button>\n  </div>\n</div>\n"
   },
   "phasetypes": {
-    "survey": "[[[LOCATION]]]../Default/DefaultPhaseTypes/survey.html"
+    "survey": "[[[LOCATION]]]../Default/DefaultPhaseTypes/survey.html",
+    "submit_certificate": "[[[LOCATION]]]../User/PhaseTypes/submit_certificate.html"
   },
   "procs_csv": {},
   "stims_csv": {}
