@@ -1,3 +1,4 @@
+<h1 id="status">Awaiting response from the server</h1>
 <script>
 /*
  * find the responses from the previous trial
@@ -22,7 +23,11 @@ Phase.set_timer(function(){
     survey_sender_name_value: this_response.survey_sender_name_value,
     survey_why: this_response.survey_why
   },function(response){
-    alert(response);
+    if(response == "success"){
+      $("#status").html("You have successfully submitted the request");
+    } else {
+      $("#status").html("Error: " + response + " - please copy this message and send it to Anthony Haffey (a.haffey@reading.ac.uk)");
+    }
   });
 },0);
 

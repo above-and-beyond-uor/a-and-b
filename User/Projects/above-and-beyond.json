@@ -1,6 +1,6 @@
 {
   "all_procs": {
-    "procedure_1.csv": "item,phasetype,max_time,text,shuffle_1,survey,certificate_host,\r\n2,survey,user,This is the start of a new experiment.,off,danquestionnaire.csv,,\r\n0,submit_certificate,user,,off,,https://above-and-beyond.reading.ac.uk/AAndB2021.php,\r\n0,instruct,user,\"<script>\r\nPhase.set_timer(function(){\r\n  $.post(\"\"https://above-and-beyond.reading.ac.uk/AAndB2021.php\"\", {\r\n    survey_department: \"\"School of Psychology & Clinical Language Sciences\"\",\r\n    survey_department_response: \"\"School of Psychology & Clinical Language Sciences\"\",\r\n    survey_department_value: \"\"\"\",\r\n    survey_published_response: \"\"No\"\",\r\n    survey_recep_name: \"\"asdf\"\",\r\n    survey_school_values: \"\"Other\"\",\r\n    survey_school_values_other: \"\"asdf\"\",\r\n    survey_school_values_response: \"\"[\\\"\"Professional\\\"\"]\"\",\r\n    survey_school_values_value: \"\"\"\",\r\n    survey_sender_name: \"\"asdf\"\",\r\n    survey_sender_name_response: \"\"asdf\"\",\r\n    survey_sender_name_value: \"\"\"\",\r\n    survey_why: \"\"asdf\"\"\r\n    \r\n  },function(this_response){\r\n    alert(this_response);\r\n  });  \r\n},0);\r\n</script>\",off,,,"
+    "procedure_1.csv": "item,phasetype,max_time,text,shuffle_1,survey,certificate_host,\r\n2,survey,user,This is the start of a new experiment.,off,danquestionnaire.csv,,\r\n0,submit_certificate,user,,off,,https://above-and-beyond.reading.ac.uk/AAndB2021.php,"
   },
   "conditions": "name,notes,stimuli,procedure,fullscreen,welcome,participant_id,end_message,start_message,buffer,scripts,skip_quality,\r\ncondition_1,You can put more detailed notes in this field,stimuli_1.csv,procedure_1.csv,off,,random,,,5,,yes,",
   "all_stims": {
@@ -998,8 +998,7 @@
   },
   "phasetypes": {
     "survey": "[[[LOCATION]]]../Default/DefaultPhaseTypes/survey.html",
-    "submit_certificate": "[[[LOCATION]]]../User/PhaseTypes/submit_certificate.html",
-    "instruct": "[[[LOCATION]]]../Default/DefaultPhaseTypes/instruct.html"
+    "submit_certificate": "[[[LOCATION]]]../User/PhaseTypes/submit_certificate.html"
   },
   "procs_csv": {},
   "stims_csv": {}
