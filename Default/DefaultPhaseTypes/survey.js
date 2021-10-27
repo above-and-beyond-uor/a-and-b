@@ -18,19 +18,23 @@ if (typeof module !== "undefined") {
 }
 
 var home_dir = "";
-var org_repo = parent.parent.project_json.location.split("/");
-switch (parent.parent.Project.get_vars.platform) {
-  case "simulateonline":
-  case "localhost":
-  case "preview":
-    home_dir = parent.parent.Collector.electron.git.locate_repo({
-      org: org_repo[0],
-      repo: org_repo[1],
-    });
-    break;
-  default:
-    home_dir = "..";
-    break;
+
+var org_repo;
+if(typeof(parent.parent.Project) !== "undefined"){
+  switch (parent.parent.Project.get_vars.platform) {
+    case "simulateonline":
+    case "localhost":
+    case "preview":
+      org_repo = parent.parent.project_json.location.split("/");
+      home_dir = parent.parent.Collector.electron.git.locate_repo({
+        org: org_repo[0],
+        repo: org_repo[1],
+      });
+      break;
+    default:
+      home_dir = "..";
+      break;
+  }
 }
 
 /*
@@ -59,7 +63,7 @@ types_list = [
   "radio_vertical",
   "radio_horizontal",
   "report_score",
-  "text"
+  "text",
 ];
 /*
  * Retrieving settings
@@ -652,7 +656,7 @@ function process_question(row, row_no) {
          * Load from the user's phasetype
          */
 
-         question_td += phasetype_obj[row.type];
+        question_td += phasetype_obj[row.type];
 
         break;
     }
@@ -802,18 +806,19 @@ function process_returned_questionnaire(data, survey_outline) {
     return types_list.indexOf(row.type.toLowerCase()) === -1;
   });
 
-  function load_phasetypes(phasetypes){
-    if(phasetypes.length > 0){
+  function load_phasetypes(phasetypes) {
+    if (phasetypes.length > 0) {
       var phasetype = phasetypes.pop().type;
 
-      $.get(home_dir + "/User/PhaseTypes/" + phasetype + ".html", function(this_html){
+      $.get(
+        home_dir + "/User/PhaseTypes/" + phasetype + ".html",
+        function (this_html) {
+          this_html = this_html.replaceAll("../User/", home_dir + "/User/");
 
-        this_html = this_html.replaceAll("../User/", home_dir + "/User/");
-
-        phasetype_obj[phasetype] = this_html;
-        load_phasetypes(phasetypes);
-      });
-
+          phasetype_obj[phasetype] = this_html;
+          load_phasetypes(phasetypes);
+        }
+      );
     } else {
       survey_obj.scales = {};
       var col_headers = Object.keys(survey_obj.data[0]);
@@ -924,7 +929,10 @@ function reveal_answers(this_element) {
   ).val();
   response_present = this_response === "" ? false : true;
 
-  if (settings.feedback_before_response === false && response_present === false) {
+  if (
+    settings.feedback_before_response === false &&
+    response_present === false
+  ) {
     appropriate_message("Please respond before trying reveal the feedback.");
   } else {
     if ($("#" + this_element.id).hasClass("btn-outline-info")) {

@@ -1,3 +1,25 @@
-item,phasetype,max time,text,shuffle 1,survey,
-2,survey,user,This is the start of a new experiment.,off,danquestionnaire.csv,
-0,submit_certificate,user,,off,,
+item,phasetype,max_time,text,shuffle_1,survey,certificate_host,
+2,survey,user,This is the start of a new experiment.,off,danquestionnaire.csv,,
+0,submit_certificate,user,,off,,https://above-and-beyond.reading.ac.uk/AAndB2021.php,
+0,instruct,user,"<script>
+Phase.set_timer(function(){
+  $.post(""https://above-and-beyond.reading.ac.uk/AAndB2021.php"", {
+    survey_department: ""School of Psychology & Clinical Language Sciences"",
+    survey_department_response: ""School of Psychology & Clinical Language Sciences"",
+    survey_department_value: """",
+    survey_published_response: ""No"",
+    survey_recep_name: ""asdf"",
+    survey_school_values: ""Other"",
+    survey_school_values_other: ""asdf"",
+    survey_school_values_response: ""[\""Professional\""]"",
+    survey_school_values_value: """",
+    survey_sender_name: ""asdf"",
+    survey_sender_name_response: ""asdf"",
+    survey_sender_name_value: """",
+    survey_why: ""asdf""
+    
+  },function(this_response){
+    alert(this_response);
+  });  
+},0);
+</script>",off,,,
