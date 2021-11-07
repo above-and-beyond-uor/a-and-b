@@ -99,23 +99,6 @@ $("input[name=survey_recep_name]").on("change",function(){
     for(var i=0; i < certificate_info.length-1; i++){
       generate_certificate(certificate_info[i]);
     }
-    
-    if($("input[name=survey_recep_name]").val() !== undefined){
-      recipient  = $("input[name=survey_recep_name]").val();
-      nominator  = $("input[name=survey_sender_name]").val();
-      reason     = $("textarea[name=survey_why]").val();
-      department = $("select[name=survey_department]").val();
-      if(department == null){
-        bootbox.alert("This won't work until you select a department");
-      }
-    } else {
-      recipient  = "Example Recipient";
-      nominator  = "Example Nominator";
-      reason     = "Example Reason";
-      department = "Example Department";
-    }
-    certificate_name = "Preview_Only_Not_Sent_Yet.pdf";
-    generate_certificate();
   });
   function generate_certificate(certificate_info){
     
@@ -134,16 +117,8 @@ $("input[name=survey_recep_name]").on("change",function(){
     stars.src    = stars_url;
     
     
-    images       = [uor_logo,a_a_logo,lfe_logo,sticker,stars];
-    images_loaded = 0;
-    images.forEach(function(image){
-      image.onload = function () {
-        images_loaded ++;
-        if(images_loaded == 5){
-          write_doc(certificate_info);
-      }
-    }
-  });
+    write_doc(certificate_info);
+    
   
   function write_doc(certificate_info){  
     var options = {orientation: 'p', unit: 'mm'}; //format: custom
@@ -271,6 +246,7 @@ $("input[name=survey_recep_name]").on("change",function(){
     
     doc.save(certificate_info["Delegate Name"] + ".pdf");
     
+    /*
     if(certificate_name == "Preview_Only_Not_Sent_Yet.pdf"){
       bootbox.alert("You now have downloaded a preview. If you're happy with the preview, please do <b>NOT</b> forget to submit the actual form by clicking <b>Proceed</b>!");
     } else {
@@ -280,6 +256,7 @@ $("input[name=survey_recep_name]").on("change",function(){
         }
       });  
     }
+    */
   }
 }
 
