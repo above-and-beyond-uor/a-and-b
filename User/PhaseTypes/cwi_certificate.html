@@ -2,12 +2,37 @@
 <script type="text/javascript" charset="utf-8" src="Handsontables/handsontables.full.js"></script>
 <script type="text/javascript" charset="utf-8" src="Handsontables/HandsontablesFunctions.js"></script>
 
-
+<br/><br/>
+<input type="file" name="filePhoto" value="" id="filePhoto" class="required borrowerImageFile" data-errormsg="PhotoUploadErrorMsg">
+<br/><br/>
+<img id="previewHolder" alt="Uploaded Image Preview Holder" width="250px" height="250px" style="border-radius:3px;border:5px solid red;"/>
 <div id="certificate_spreadsheet"></div>
 
 <div id="procSheetTable"></div>
 
 <script>
+var signature_image;
+function readURL(input) {
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      signature_image = e;
+      signature.src = e.target.result;
+
+      $('#previewHolder').attr('src', e.target.result);
+    }
+    reader.readAsDataURL(input.files[0]);
+  } else {
+    alert('select a file to see preview');
+    $('#previewHolder').attr('src', '');
+  }
+}
+
+$("#filePhoto").change(function() {
+  readURL(this);
+});
+
+
 const example = document.getElementById('procSheetTable');
 const hot = new Handsontable(example, {
   data: [
@@ -52,6 +77,9 @@ var cwi_background     = new Image();
 
 var uor_logo     = new Image();
     uor_logo.src = "../User/logos/university-of-reading-logo-vector.png";
+
+var signature = new Image();
+
 
 var recipient;
 var nominator;
@@ -117,6 +145,7 @@ $("input[name=survey_recep_name]").on("change",function(){
     stars.src    = stars_url;
     
     
+    
     write_doc(certificate_info);
     
   
@@ -180,8 +209,12 @@ $("input[name=survey_recep_name]").on("change",function(){
 
     
     doc.addImage(cwi_background, 'PNG', 15, 35, 180, 150);
-    doc.addImage(cwi_logo, 'PNG', 135, 15, 60, 50);
-    doc.addImage(uor_logo, 'PNG', 135, 255, 60, 30);
+    doc.addImage(cwi_logo,       'PNG', 135, 15, 60, 50);
+    doc.addImage(uor_logo,       'PNG', 135, 255, 60, 30);
+    doc.addImage(signature,      'PNG', 60, 200, 80, 60);
+    
+    
+    
     //doc.addImage(cwi_logo, 'PNG', 165, 15, 30, 30);
     
     //doc.addImage(cwi_logo, 'PNG', 165, 15, 30, 30);
