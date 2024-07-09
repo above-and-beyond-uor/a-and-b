@@ -77,7 +77,7 @@
       ],
       [
         "school_values",
-        "Which of our School values does this nomination encapsulate?",
+        "Which of our values does this nomination encapsulate?",
         "checkbox",
         "Ambitious|Inspiring|Innovative|Professional|Collaborative|Valuing Diversity|Other",
         "no",
@@ -103,7 +103,7 @@
       ],
       [
         "published",
-        "We are planning to share these examples - would you be happy for this nomination to be published in the School (your name will be removed)?",
+        "We are planning to share these examples - would you be happy for this nomination to be published?",
         "likert",
         "Yes|No",
         "no",
@@ -116,7 +116,7 @@
       ],
       [
         "department",
-        "Which academic school/department is the nominee in?",
+        "Which area is the nominee in?",
         "dropdown",
         "Estates Directorate|Institute of Education|School of Psychology & Clinical Language Sciences",
         "no",
