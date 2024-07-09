@@ -1668,6 +1668,7 @@ function shuffle_start_exp() {
 
 function start_restart() {
   if (isSafari) {
+    Project.activate_pipe();
     /*
     bootbox.alert(
       "This experiment will not run in safari. Please close and use another browser"
